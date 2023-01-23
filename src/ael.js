@@ -20,6 +20,8 @@ Prints to stdout according to <outputType>, which must be one of:
 `
 
 function description(node) {
+  if (typeof node === "string") return node
+
   // Return a compact and pretty string representation of the node graph,
   // taking care of cycles. Written here from scratch because the built-in
   // inspect function, while nice, isn't nice enough. Defined properly in
